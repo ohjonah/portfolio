@@ -2,9 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 
 const TSLintPlugin = require('tslint-webpack-plugin');
-
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const plugins = [
+    new CleanWebpackPlugin('dist'),
     new webpack.HotModuleReplacementPlugin(),
     new TSLintPlugin({
         files: ['./src/**/*.ts', './src/**/*.tsx', './src/**/*.d.ts'],
@@ -14,6 +15,7 @@ const plugins = [
 
 module.exports = {
     entry: `${__dirname}/src/index.tsx`,
+    plugins,
     devtool: 'eval',
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -44,5 +46,6 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.join(__dirname, '/dist'),
+	publicPath: '/static/',
     },
 };

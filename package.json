@@ -17,6 +17,7 @@
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
     "awesome-typescript-loader": "^3.4.1",
+    "clean-webpack-plugin": "^0.1.17",
     "source-map-loader": "^0.2.3",
     "tslint": "^5.8.0",
     "tslint-webpack-plugin": "^1.0.0",
